@@ -44,7 +44,7 @@ for (const child of Array.from(document.querySelector(".navbar ul").children)) {
 }
 
 
-document.addEventListener('paste', function (e) {
+document.addEventListener('paste', async function (e) {
   if (document.querySelector(".actions .songs").classList.contains("hidden")) return;
   if (document.activeElement.tagName == "INPUT") return;
   e.preventDefault();
@@ -76,7 +76,7 @@ document.addEventListener('paste', function (e) {
     frozenClipboard[type] = data;
   }
 
-  insertSong({ "title": title, "data": frozenClipboard });
+  await insertSong({ "title": title, "data": frozenClipboard });
   createSongsList();
 });
 
@@ -153,8 +153,8 @@ async function createSongsList() {
     </svg>
     `
 
-    deleteDiv.addEventListener('click', function () {
-      deleteSong(song);
+    deleteDiv.addEventListener('click', async function () {
+      await deleteSong(song);
       createSongsList();
     });
 

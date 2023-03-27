@@ -45,34 +45,36 @@ for (const child of Array.from(document.querySelector(".navbar ul").children)) {
     });
 }
 document.addEventListener('paste', function (e) {
-    if (document.querySelector(".actions .songs").classList.contains("hidden"))
-        return;
-    if (document.activeElement.tagName == "INPUT")
-        return;
-    e.preventDefault();
-    const frozenClipboard = {};
-    if (!e.clipboardData) {
-        return;
-    }
-    if (!e.clipboardData.types.includes("application/x-vnd.google-docs-drawings-page+wrapped")) {
-        throw new Error("No song to save.");
-    }
-    let title;
-    for (const type of e.clipboardData.types) {
-        const data = e.clipboardData.getData(type);
-        if (type == "application/x-vnd.google-docs-drawings-page+wrapped") {
-            const songData = JSON.parse(JSON.parse(data)["data"]);
-            for (const item of songData["commands"]) {
-                if (item[0] === 15) {
-                    title = item[4].trim();
-                    break;
+    return __awaiter(this, void 0, void 0, function* () {
+        if (document.querySelector(".actions .songs").classList.contains("hidden"))
+            return;
+        if (document.activeElement.tagName == "INPUT")
+            return;
+        e.preventDefault();
+        const frozenClipboard = {};
+        if (!e.clipboardData) {
+            return;
+        }
+        if (!e.clipboardData.types.includes("application/x-vnd.google-docs-drawings-page+wrapped")) {
+            throw new Error("No song to save.");
+        }
+        let title;
+        for (const type of e.clipboardData.types) {
+            const data = e.clipboardData.getData(type);
+            if (type == "application/x-vnd.google-docs-drawings-page+wrapped") {
+                const songData = JSON.parse(JSON.parse(data)["data"]);
+                for (const item of songData["commands"]) {
+                    if (item[0] === 15) {
+                        title = item[4].trim();
+                        break;
+                    }
                 }
             }
+            frozenClipboard[type] = data;
         }
-        frozenClipboard[type] = data;
-    }
-    insertSong({ "title": title, "data": frozenClipboard });
-    createSongsList();
+        yield insertSong({ "title": title, "data": frozenClipboard });
+        createSongsList();
+    });
 });
 document.addEventListener("click", function (e) {
     for (const child of Array.from(list.children)) {
@@ -139,8 +141,10 @@ function createSongsList() {
     </svg>
     `;
             deleteDiv.addEventListener('click', function () {
-                deleteSong(song);
-                createSongsList();
+                return __awaiter(this, void 0, void 0, function* () {
+                    yield deleteSong(song);
+                    createSongsList();
+                });
             });
             li.appendChild(a);
             li.append(deleteDiv);
