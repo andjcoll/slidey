@@ -12,7 +12,7 @@ import { app } from "../main.js";
 function getBibleVerses(passage, version) {
     return __awaiter(this, void 0, void 0, function* () {
         passage = passage.trim();
-        let response = yield fetch(`../bible/texts/${version}.json`);
+        let response = yield fetch(`src/bible/texts/${version}.json`);
         console.log(response);
         let bibleData;
         if (response.ok) {

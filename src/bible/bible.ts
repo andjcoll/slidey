@@ -11,7 +11,7 @@ async function getBibleVerses(passage: string, version: string) {
     passage = passage.trim();
 
 
-    let response = await fetch(`../bible/texts/${version}.json`);
+    let response = await fetch(`src/bible/texts/${version}.json`);
     console.log(response);
     let bibleData;
     if (response.ok) {
