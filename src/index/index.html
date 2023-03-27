@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Slidey</title>
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content: blob:">
+  <meta http-equiv="X-Content-Security-Policy"
+    content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content: blob:" />
+  <link rel="stylesheet" href="../../dist/styles/style.css" />
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://unpkg.com/realm-web/dist/bundle.iife.js"></script>
+  <script src="sweetalert2.all.min.js"></script>
+</head>
+
+<body>
+  <div class="navbar">
+    <ul>
+      <li><a class="active" id="songs">Songs</a></li>
+      <li><a id="bible">Bible</a></li>
+      <li><a id="login">Login</a></li>
+    </ul>
+  </div>
+
+  <div class="actions">
+    <div class="songs">
+      <div class="input">
+        <label for="search-songs">
+          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px" y="0px" viewBox="0 0 487.95 487.95" xml:space="preserve">
+            <path d="M481.8,453l-140-140.1c27.6-33.1,44.2-75.4,44.2-121.6C386,85.9,299.5,0.2,193.1,0.2S0,86,0,191.4s86.5,191.1,192.9,191.1
+          c45.2,0,86.8-15.5,119.8-41.4l140.5,140.5c8.2,8.2,20.4,8.2,28.6,0C490,473.4,490,461.2,481.8,453z M41,191.4
+          c0-82.8,68.2-150.1,151.9-150.1s151.9,67.3,151.9,150.1s-68.2,150.1-151.9,150.1S41,274.1,41,191.4z" />
+          </svg>
+        </label>
+        <input type="text" id="search-songs" placeholder="Search for song">
+      </div>
+      <ul id="songs-list"></ul>
+    </div>
+
+    <div class="bible">
+      <div class="input">
+        <div class="search-and-icon">
+          <label for="search-bible">
+            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0px" y="0px" viewBox="0 0 487.95 487.95" xml:space="preserve">
+              <path d="M481.8,453l-140-140.1c27.6-33.1,44.2-75.4,44.2-121.6C386,85.9,299.5,0.2,193.1,0.2S0,86,0,191.4s86.5,191.1,192.9,191.1
+            c45.2,0,86.8-15.5,119.8-41.4l140.5,140.5c8.2,8.2,20.4,8.2,28.6,0C490,473.4,490,461.2,481.8,453z M41,191.4
+            c0-82.8,68.2-150.1,151.9-150.1s151.9,67.3,151.9,150.1s-68.2,150.1-151.9,150.1S41,274.1,41,191.4z" />
+            </svg>
+          </label>
+          <input type="text" id="search-bible" placeholder="Search for a Bible passage.">
+        </div>
+
+        <input type="text" id="choose-version" placeholder="Version" value="NIV">
+      </div>
+
+      <div id="copy-bible" class="button"><span>Copy Passage</span></div>
+    </div>
+
+    <!-- <div class="change-user-blur">
+        <div class="change-user-box">
+            <span>Are you sure you want to change users?</span>
+            <div id="cancel-change-user">Cancel</div>
+            <div id="confirm-change-user">Change User</div>
+        </div>
+    </div> -->
+
+    <script src="../../dist/index/ts/songs.js" type="module" defer></script>
+    <script src="../../dist/index/ts/bible.js" type="module" defer></script>
+    <script src="../../dist/index/ts/mongo.js" type="module" defer></script>
+</body>
+
+</html>

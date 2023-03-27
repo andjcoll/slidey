@@ -1,0 +1,240 @@
+#songs-list {
+  /* Remove default list styling */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  border-top: solid #ddd 1px;
+}
+#songs-list .selected a {
+  background-color: #AED3FA !important;
+}
+#songs-list .selected a span {
+  background-color: white;
+}
+#songs-list li:hover .delete-song {
+  display: block !important;
+}
+
+#songs-list li a {
+  border: 1px solid #ddd;
+  /* Add a border to all links */
+  margin-top: -1px;
+  /* Prevent double borders */
+  background-color: #f6f6f6;
+  /* Grey background color */
+  padding: 20px;
+  line-height: 0;
+  /* Add some padding */
+  text-decoration: none;
+  /* Remove default text underline */
+  font-size: 18px;
+  /* Increase the font-size */
+  color: black;
+  /* Add a black text color */
+  display: block;
+  /* Make it into a block element to fill the whole list */
+  cursor: pointer;
+  white-space: nowrap;
+}
+#songs-list li a span {
+  white-space: nowrap;
+}
+
+#songs-list li a:hover:not(.header) {
+  background-color: #eee;
+  /* Add a hover effect to all links, except for headers */
+}
+
+.songs {
+  width: 100%;
+}
+
+.input svg {
+  width: 25px;
+  position: absolute;
+  padding: 9px;
+}
+.input input {
+  width: 100%;
+  box-sizing: border-box;
+  /* Full-width */
+  font-size: 16px;
+  /* Increase font-size */
+  padding: 12px 20px 12px 40px;
+  /* Add some padding */
+  border: 1px solid #ddd;
+  /* Add a grey border */
+  margin-bottom: 12px;
+  /* Add some space below the input */
+  display: inline-block;
+}
+.input #search-bible {
+  width: 100%;
+  box-sizing: border-box;
+}
+.input #choose-version {
+  padding: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+body {
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 55px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 70%;
+  z-index: 1;
+}
+.navbar li {
+  float: left;
+  cursor: pointer;
+}
+.navbar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.navbar li a:hover:not(.active) {
+  background-color: #111;
+}
+.navbar .active {
+  background-color: #04AA6D;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.button {
+  border: 1px solid #ddd;
+  margin-top: -1px;
+  background-color: #f6f6f6;
+  padding: 20px;
+  line-height: 0;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block;
+  cursor: pointer;
+  text-align: center;
+}
+
+.button.selected {
+  background-color: #AED3FA !important;
+}
+.button.selected span {
+  background-color: white;
+}
+
+.bible .input {
+  display: grid;
+  grid-template-columns: 1fr 0.15fr;
+}
+
+#password-form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+#password-form .password-box {
+  background-color: white;
+  padding: 50px;
+  display: grid;
+  text-align: center;
+  font-size: 23px;
+  border-radius: 10px;
+  gap: 10px;
+  border: solid black 3px;
+}
+#password-form .password-box #password {
+  padding: 5px;
+}
+#password-form .password-box #submit-password {
+  font-size: 20px;
+}
+
+.delete-song {
+  width: 24px;
+  height: 24px;
+  padding: 5px;
+  border: solid black 1px;
+  margin-right: 4px;
+  border-radius: 5px;
+  position: relative;
+  right: 0;
+  float: right;
+  background-color: red;
+  margin-top: -39px;
+  display: none;
+  fill: white;
+}
+
+.delete-song:hover {
+  fill: red;
+  background-color: white;
+  cursor: pointer;
+}
+
+.change-user-blur {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  left: 0;
+  top: 0;
+  z-index: 1;
+  display: flex;
+}
+
+.change-user-box {
+  background-color: white;
+  margin: auto;
+  width: 80%;
+  height: 35%;
+  text-align: center;
+  padding: 25px;
+  border-radius: 20px;
+  border: solid black 3px;
+}
+
+.change-user-box span {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.change-user-box div {
+  cursor: pointer;
+  background-color: gray;
+  width: 50%;
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+  border-radius: 20px;
+  margin: auto;
+  padding: 1%;
+  margin-top: 5%;
+}
+
+/*# sourceMappingURL=style.css.map */

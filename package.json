@@ -1,0 +1,21 @@
+{
+  "name": "serverless-slidey",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "concurrently npm:watch-ts npm:server npm:watch-sass",
+    "server": "http-server -p 8080",
+    "watch-ts": "tsc -w -p ./tsconfig.json",
+    "watch-sass": "sass src/styles:dist/styles -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jquery": "^3.5.16",
+    "concurrently": "^7.6.0",
+    "http-server": "^14.1.1",
+    "realm-web": "^2.0.0",
+    "sweetalert2": "^11.7.3"
+  },
+  "type": "module"
+}

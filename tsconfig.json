@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "allowJs": true,
+    "module": "ES2015",
+    "target": "ES2015",
+    "lib": ["ES2021", "DOM"],
+    "noImplicitAny": true,
+    "sourceMap": false,
+    "baseUrl": ".",
+    "moduleResolution": "classic",
+    "skipLibCheck": true,
+    "outDir": "dist"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["src/js"]
+}
