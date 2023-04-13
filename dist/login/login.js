@@ -18,5 +18,5 @@ $("#login").on("click", () => __awaiter(void 0, void 0, void 0, function* () {
     // `App.currentUser` updates to match the logged in user
     console.assert(user.id === app.currentUser.id);
     $("#login").text("Logged in!");
-    location.href = "../../index.html";
+    location.href = "../index/index.html";
 }));

@@ -36,8 +36,14 @@ function getBibleVerses(passage, version) {
             alert("Bible version not found.");
             throw new Error("Bible version not found.");
         }
-        const book = passage.split(" ")[0];
-        passage = passage.split(" ")[1];
+        let splitPassages = passage.split(" ");
+        let book = "";
+        do {
+            book += splitPassages[0] + " ";
+            splitPassages = splitPassages.slice(1);
+        } while (isNaN((parseInt(splitPassages[0]))));
+        book = book.trim();
+        passage = splitPassages[0];
         const sections = passage.split("-");
         let startSection = {
             book: book,

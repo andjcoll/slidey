@@ -35,9 +35,18 @@ async function getBibleVerses(passage: string, version: string) {
         throw new Error("Bible version not found.");
     }
 
-    const book = passage.split(" ")[0];
+    let splitPassages = passage.split(" ");
+    let book = "";
 
-    passage = passage.split(" ")[1];
+    do {
+        book += splitPassages[0] + " ";
+        splitPassages = splitPassages.slice(1);
+
+    } while (isNaN((parseInt(splitPassages[0]))));
+
+    book = book.trim();
+
+    passage = splitPassages[0];
 
     const sections = passage.split("-");
     let startSection: BiblePassage = {
