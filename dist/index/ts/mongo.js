@@ -69,12 +69,12 @@ $("#login").on("click", (event) => {
             if (result.isConfirmed) {
                 console.log("Logging out user...");
                 yield app.currentUser.logOut();
-                location.href = "../login/login.html";
+                location.href = "src/login/login.html";
             }
         }));
     }
     else {
-        location.href = "../login/login.html";
+        location.href = "src/login/login.html";
     }
 });
 $("#cancel-change-user").on("click", () => {

@@ -12,6 +12,6 @@ $("#login").on("click", async () => {
     console.assert(user.id === app.currentUser.id);
     $("#login").text("Logged in!");
 
-    location.href = "../index/index.html";
+    location.href = "../../index.html";
 });
 
